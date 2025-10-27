@@ -36,6 +36,8 @@ For a standard coding session:
 
 **Full agreements in references/working-agreements.md - read before each session!**
 
+**Note:** This skill works globally across all your projects. For project-specific configuration (tech stack, conventions), you can optionally create a `.claude/instructions.md` file in your project root. The Analysis phase will automatically check for and use this configuration. See the repository's `docs/PROJECT-CONFIGURATION.md` for details.
+
 **Core Principles:**
 - ✅ **Test-Driven Development**: Failing tests first, then production code
 - ✅ **Incremental Change**: Small commits (<100 lines, <5 files)  
@@ -55,17 +57,19 @@ See references/working-agreements.md for complete details.
 ### 1. Plan Phase - Analysis (2-10 min)
 
 **Load the analysis prompt:**
-```
+\`\`\`
 Load references/analysis-prompt.md and analyze: [your business objective]
-```
+\`\`\`
 
 The AI will:
+- Check for .claude/instructions.md (project configuration)
 - Search codebase for existing similar patterns
 - Document architectural context and abstractions
 - Propose 2-3 alternative approaches with pros/cons
 - Recommend the best approach
 
 **Your actions:**
+- Provide project context if requested (no .claude/instructions.md found)
 - Review the analysis thoroughly
 - Ask clarifying questions
 - Provide additional context
@@ -75,9 +79,9 @@ The AI will:
 ### 2. Plan Phase - Task Breakdown (2 min)
 
 **Load the planning prompt:**
-```
+\`\`\`
 Load references/planning-prompt.md and create the execution plan
-```
+\`\`\`
 
 The AI will:
 - Break work into numbered, atomic TDD steps
@@ -94,9 +98,9 @@ The AI will:
 ### 3. Do Phase - Implementation (variable, <3 hours)
 
 **Load the implementation prompt:**
-```
+\`\`\`
 Load references/implementation-prompt.md and execute the plan
-```
+\`\`\`
 
 The AI will:
 - Show reasoning before each step
@@ -122,9 +126,9 @@ The AI will:
 ### 4. Check Phase - Completion Analysis (5 min)
 
 **Load the completion check prompt:**
-```
+\`\`\`
 Load references/completion-prompt.md and verify our work
-```
+\`\`\`
 
 The AI will:
 - Verify all tests pass and manual testing is complete
@@ -143,9 +147,9 @@ The AI will:
 ### 5. Act Phase - Retrospective (2-10 min)
 
 **Load the retrospective prompt:**
-```
+\`\`\`
 Load references/retrospective-prompt.md and analyze our session
-```
+\`\`\`
 
 The AI will:
 - Summarize what was accomplished
@@ -193,9 +197,9 @@ For production issues requiring immediate fixes:
 
 Use the metrics tracking script to measure quality:
 
-```bash
+\`\`\`bash
 python scripts/track_metrics.py --repo /path/to/repo --since "7 days ago"
-```
+\`\`\`
 
 Monitors:
 1. Large commit % (>100 lines) - target: <20%
@@ -208,11 +212,11 @@ Monitors:
 
 Track your sessions for continuous improvement:
 
-```bash
+\`\`\`bash
 python scripts/init_session.py "Feature name" --objective "Business objective"
-```
+\`\`\`
 
-This creates a session log in `assets/session-template.md` format to track:
+This creates a session log in \`assets/session-template.md\` format to track:
 - Analysis and plan decisions
 - Implementation notes and interventions
 - Completion verification results
@@ -245,12 +249,12 @@ Stop and create a new plan if:
 
 ## Reference Files
 
-All prompts and guidelines are in the `references/` directory:
-- `working-agreements.md` - Core principles and intervention questions (read first!)
-- `analysis-prompt.md` - Detailed codebase analysis and approach selection
-- `planning-prompt.md` - Task breakdown into TDD steps  
-- `implementation-prompt.md` - TDD execution guidelines
-- `completion-prompt.md` - Quality verification checklist
-- `retrospective-prompt.md` - Session learning and improvement
+All prompts and guidelines are in the \`references/\` directory:
+- \`working-agreements.md\` - Core principles and intervention questions (read first!)
+- \`analysis-prompt.md\` - Detailed codebase analysis and approach selection
+- \`planning-prompt.md\` - Task breakdown into TDD steps  
+- \`implementation-prompt.md\` - TDD execution guidelines
+- \`completion-prompt.md\` - Quality verification checklist
+- \`retrospective-prompt.md\` - Session learning and improvement
 
 Load these files as needed during each phase of the PDCA cycle.

@@ -90,14 +90,16 @@ Claude will guide you through:
 └── docs/                        # Additional documentation
     ├── README.md
     ├── GETTING-STARTED.md
+    ├── PROJECT-CONFIGURATION.md
     └── REFINEMENTS-V1.1.md
 ```
 
 ## 🎓 Documentation
 
-- **[GETTING-STARTED.md](GETTING-STARTED.md)** - Your 5-minute quick start guide
+- **[GETTING-STARTED.md](docs/GETTING-STARTED.md)** - Your 5-minute quick start guide
+- **[PROJECT-CONFIGURATION.md](docs/PROJECT-CONFIGURATION.md)** - Guide for project-specific setup
 - **[README.md](README.md)** - Complete package overview
-- **[REFINEMENTS-V1.1.md](REFINEMENTS-V1.1.md)** - Technical refinements and validation
+- **[REFINEMENTS-V1.1.md](docs/REFINEMENTS-V1.1.md)** - Technical refinements and validation
 
 ## 🔧 Key Features
 
@@ -178,6 +180,14 @@ From the article's research:
 
 ## 🛠️ Customization
 
+### Project-Specific Configuration
+
+The PDCA skill works globally across all projects. For project-specific tech stack and conventions, you can optionally create a `.claude/instructions.md` file in your project root. This tells Claude about your specific tech choices without modifying the skill itself.
+
+**See [docs/PROJECT-CONFIGURATION.md](docs/PROJECT-CONFIGURATION.md) for complete guide on when and how to use project-specific configuration.**
+
+### Customizing the Skill Itself
+
 The skill is designed to be customized:
 
 ```bash
@@ -231,6 +241,12 @@ Use the included `track_metrics.py` script locally:
 ```bash
 python scripts/track_metrics.py --repo . --since "7 days ago"
 ```
+</details>
+
+<details>
+<summary><b>Do I need a .claude/instructions.md for every project?</b></summary>
+
+No! Only create it for projects with specific conventions or when you find yourself repeating the same context. See [PROJECT-CONFIGURATION.md](docs/PROJECT-CONFIGURATION.md) for guidance.
 </details>
 
 ## 🌟 Star History

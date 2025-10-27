@@ -128,6 +128,50 @@ Just follow Claude's lead! It will walk you through:
 
 ---
 
+## 🎨 Optional: Project-Specific Configuration
+
+The PDCA skill works great out-of-the-box, but for projects with specific tech stacks or team conventions, you can add a `.claude/instructions.md` file to your project root.
+
+### When to Add Project Config
+
+**Add `.claude/instructions.md` if:**
+- ✅ Your project uses specific frameworks (Next.js vs Vite, TypeScript vs JavaScript)
+- ✅ You have team conventions that differ from defaults
+- ✅ You keep repeating the same context every session
+- ✅ You work on complex enterprise projects
+
+**Skip it if:**
+- ❌ Simple personal projects
+- ❌ Standard tech stack with common patterns
+- ❌ Just prototyping or experimenting
+
+### Quick Setup (2 minutes)
+
+```bash
+# In your project root
+mkdir .claude
+nano .claude/instructions.md
+```
+
+**Minimal template:**
+```markdown
+# Project: [Your Project Name]
+
+## Tech Stack
+- Framework: [e.g., Next.js 14]
+- Language: [e.g., TypeScript]
+- Database: [e.g., PostgreSQL + Prisma]
+
+## Key Conventions
+- [e.g., Use server components by default]
+- [e.g., API routes in app/api/]
+- [e.g., Functional components only]
+```
+
+**For detailed guide and templates, see [PROJECT-CONFIGURATION.md](PROJECT-CONFIGURATION.md)**
+
+---
+
 ## 🎯 Key Success Factors
 
 ### ✅ DO These Things
@@ -248,6 +292,11 @@ Just load references/implementation-prompt.md for now
 - Existing pattern → Lightweight
 - Production bug → Emergency version
 
+### "AI doesn't know my project stack"
+**Solution:** Either:
+- Tell Claude once: "This is a Next.js + TypeScript project"
+- Or create `.claude/instructions.md` (see [PROJECT-CONFIGURATION.md](PROJECT-CONFIGURATION.md))
+
 ---
 
 ## 🎓 Learning Resources
@@ -255,9 +304,10 @@ Just load references/implementation-prompt.md for now
 ### In Order of Priority
 
 1. **This file** - Quick start ← YOU ARE HERE
-2. **PDCA-QUICK-REFERENCE.md** - Cheat sheet (print it!)
-3. **PDCA-SKILL-INSTALLATION-GUIDE.md** - Detailed guide
-4. **PDCA-AI-Coding-Framework.md** - Deep dive
+2. **[PROJECT-CONFIGURATION.md](PROJECT-CONFIGURATION.md)** - Optional project setup
+3. **PDCA-QUICK-REFERENCE.md** - Cheat sheet (print it!)
+4. **PDCA-SKILL-INSTALLATION-GUIDE.md** - Detailed guide
+5. **PDCA-AI-Coding-Framework.md** - Deep dive
 
 ### Original Research
 
@@ -283,6 +333,7 @@ Just load references/implementation-prompt.md for now
 - [ ] Run metrics script
 - [ ] Update prompts based on retrospectives
 - [ ] Share initial results
+- [ ] (Optional) Add `.claude/instructions.md` if needed
 
 ### This Month
 - [ ] Track metrics weekly
