@@ -1,0 +1,14 @@
+# Requirements for PDCA scripts
+# Install with: pip install -r requirements.txt
+
+# No external dependencies required!
+# The scripts use only Python standard library:
+# - subprocess (git commands)
+# - argparse (CLI parsing)
+# - datetime (timestamps)
+# - pathlib (file operations)
+
+# For development/testing (optional):
+# pylint>=2.17.0
+# black>=23.0.0
+# pytest>=7.4.0
