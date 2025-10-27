@@ -1,7 +1,7 @@
 # PDCA AI Coding Skill
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/YOUR_USERNAME/pdca-ai-coding-skill/releases)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/MarcherGA/pdca-ai-coding-skill/releases)
 [![Claude AI](https://img.shields.io/badge/Claude-AI%20Skill-purple.svg)](https://claude.ai)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
