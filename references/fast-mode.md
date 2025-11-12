@@ -44,9 +44,14 @@
 - Identify available abstractions (base classes, interfaces, utilities)
 - Map integration touch points (which methods need modification)
 - Note dependency injection patterns
-- Identify configuration patterns
 
-**3. ALTERNATIVE APPROACHES**
+**3. CONFIGURATION & SETUP**
+- Identify where similar features are configured
+- Document configuration file patterns used
+- Note environment-specific considerations
+- Check for feature flags or settings
+
+**4. ALTERNATIVE APPROACHES**
 Propose 2-3 approaches with:
 - Pros and cons
 - Integration complexity (low/medium/high)
@@ -55,7 +60,7 @@ Propose 2-3 approaches with:
 - Estimated implementation time
 - Impact on architecture
 
-**4. RECOMMENDATION**
+**5. RECOMMENDATION**
 - Which approach and why?
 - Key architectural decisions
 - Patterns to follow
@@ -190,7 +195,23 @@ Execute the plan following strict TDD discipline.
 - Respect layer boundaries
 - If pattern doesn't fit, stop and discuss
 
-**Human supervision:** Monitor reasoning for errors, intervene when context drifts, provide missing context, redirect if off-plan, stop and replan if assumptions prove wrong.
+**Error Handling:**
+- If test fails unexpectedly, stop and analyze why
+- If multiple tests fail, fix one at a time
+- If unsure about approach, ask before implementing
+- If regression tests fail, stop immediately and investigate
+- Stop after 3 failed attempts and ask for help
+
+**Batching Details:**
+- Related tests (same class/feature) can be batched
+- Maximum 3 tests per batch before going green
+- All tests in batch must pass before moving forward
+- Each batch = one coherent commit
+- Document batch scope upfront
+
+**Human Supervision (Critical):**
+- **Monitor for:** Reasoning errors, context drift, skipped tests, too much code at once, unverified assumptions
+- **Intervene when:** AI skips tests ("Stop. Write the failing test first."), changes too big ("This is too much at once. Break it down."), context drifts ("Return to step X. Follow the [pattern] we identified."), wrong assumptions ("That's not correct. The actual pattern is [X]."), stuck in loop ("Let's stop and replan from where we are.")
 
 ---
 
@@ -321,7 +342,14 @@ Execute the plan following strict TDD discipline.
 - Were checkpoints at right frequency?
 - Did analysis provide enough context?
 
-**8. TOP IMPROVEMENT FOR NEXT SESSION**
+**8. PROMPT REFINEMENT NEEDS**
+- Analysis prompt: [Any changes needed?]
+- Planning prompt: [Any changes needed?]
+- Implementation prompt: [Any changes needed?]
+- Completion prompt: [Any changes needed?]
+- Retrospective prompt: [Any changes needed?]
+
+**9. TOP IMPROVEMENT FOR NEXT SESSION**
 - The ONE most valuable change for next time
 - Is it prompt, process, or behavior change?
 - Why will this have biggest impact?
