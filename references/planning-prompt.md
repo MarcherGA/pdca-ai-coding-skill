@@ -2,6 +2,16 @@
 
 Use this prompt after completing the analysis to create a detailed execution plan with TDD steps.
 
+## Working Agreements (Quick Reference)
+
+**Core Principles:**
+- ✅ **Test-First**: Failing tests before production code (behavioral failures, not compilation errors)
+- ✅ **Small Commits**: <100 lines, <5 files, one logical change
+- ✅ **Follow Patterns**: Search and reuse existing abstractions
+- ✅ **You Own It**: Review AI reasoning, intervene early, commit only what you understand
+
+**Key Interventions:** "Where's the failing test first?" • "Is this commit too large?" • "Does this follow our patterns?" • "Are we staying on plan?"
+
 ## When to Use
 
 - After analysis is complete and approach is approved

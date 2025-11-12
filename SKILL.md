@@ -23,14 +23,27 @@ Use this skill for:
 
 ## Quick Start
 
-For a standard coding session:
+### Standard Mode (Guided, Phase-by-Phase)
 
-1. **Review Working Agreements** - Load references/working-agreements.md (1 min read)
-2. **Run Analysis**: "Load references/analysis-prompt.md and analyze [your objective]"
-3. **Run Planning**: "Load references/planning-prompt.md and create the plan"
-4. **Run Implementation**: "Load references/implementation-prompt.md and proceed with the plan"
-5. **Run Completion Check**: "Load references/completion-prompt.md and verify our work"
-6. **Run Retrospective**: "Load references/retrospective-prompt.md to learn from this session"
+Simply tell Claude what you want to implement:
+
+```
+I want to implement [your objective], let's use the PDCA framework
+```
+
+Claude will guide you through each phase, prompting you when to proceed to the next step. This is the default mode with full guidance and examples at each phase.
+
+### Fast Mode (Streamlined, Single Load)
+
+Add "fast mode" to your request:
+
+```
+I want to implement [your objective], let's use the PDCA framework fast mode
+```
+
+Claude will automatically load `references/fast-mode.md` and execute all 5 PDCA phases in one continuous workflow. **Saves 80% of loading time** while maintaining full quality.
+
+**Note:** Working agreements are now inlined in all phase files - no separate load needed!
 
 ## Working Agreements (Summary)
 
@@ -250,11 +263,20 @@ Stop and create a new plan if:
 ## Reference Files
 
 All prompts and guidelines are in the \`references/\` directory:
-- \`working-agreements.md\` - Core principles and intervention questions (read first!)
+
+**Fast Mode:**
+- \`fast-mode.md\` - Complete PDCA workflow in one file (all phases consolidated)
+
+**Standard Mode (Phase-by-Phase):**
 - \`analysis-prompt.md\` - Detailed codebase analysis and approach selection
-- \`planning-prompt.md\` - Task breakdown into TDD steps  
+- \`planning-prompt.md\` - Task breakdown into TDD steps
 - \`implementation-prompt.md\` - TDD execution guidelines
 - \`completion-prompt.md\` - Quality verification checklist
 - \`retrospective-prompt.md\` - Session learning and improvement
 
-Load these files as needed during each phase of the PDCA cycle.
+**Reference (Optional):**
+- \`working-agreements.md\` - Complete core principles (now inlined in all prompts)
+
+**When to Use Fast Mode vs Standard Mode:**
+- **Standard Mode** ("let's use the PDCA framework"): Complex features, first-time users, when you want detailed guidance and examples
+- **Fast Mode** ("let's use the PDCA framework fast mode"): Routine tasks, experienced PDCA users, when you want maximum efficiency
