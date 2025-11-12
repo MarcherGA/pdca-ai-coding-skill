@@ -23,27 +23,27 @@ Use this skill for:
 
 ## Quick Start
 
-### Fast Mode (Recommended for Experienced Users)
+### Standard Mode (Guided, Phase-by-Phase)
 
-Load once and execute the complete workflow:
+Simply tell Claude what you want to implement:
 
 ```
-Load references/fast-mode.md and let's implement: [your objective]
+I want to implement [your objective], let's use the PDCA framework
 ```
 
-All PDCA phases in one file with inline working agreements. **Saves 80% of loading time.**
+Claude will guide you through each phase, prompting you when to proceed to the next step. This is the default mode with full guidance and examples at each phase.
 
-### Standard Mode (Detailed Guidance)
+### Fast Mode (Streamlined, Single Load)
 
-For complex tasks or first-time users, load each phase separately:
+Add "fast mode" to your request:
 
-1. **Run Analysis**: "Load references/analysis-prompt.md and analyze [your objective]"
-2. **Run Planning**: "Load references/planning-prompt.md and create the plan"
-3. **Run Implementation**: "Load references/implementation-prompt.md and proceed with the plan"
-4. **Run Completion Check**: "Load references/completion-prompt.md and verify our work"
-5. **Run Retrospective**: "Load references/retrospective-prompt.md to learn from this session"
+```
+I want to implement [your objective], let's use the PDCA framework fast mode
+```
 
-**Note:** Working agreements are now inlined in each phase file - no separate load needed!
+Claude will automatically load `references/fast-mode.md` and execute all 5 PDCA phases in one continuous workflow. **Saves 80% of loading time** while maintaining full quality.
+
+**Note:** Working agreements are now inlined in all phase files - no separate load needed!
 
 ## Working Agreements (Summary)
 
@@ -278,5 +278,5 @@ All prompts and guidelines are in the \`references/\` directory:
 - \`working-agreements.md\` - Complete core principles (now inlined in all prompts)
 
 **When to Use Fast Mode vs Standard Mode:**
-- **Fast Mode**: Routine tasks, established patterns, experienced PDCA users
-- **Standard Mode**: Complex features, learning PDCA, need detailed phase-by-phase guidance
+- **Standard Mode** ("let's use the PDCA framework"): Complex features, first-time users, when you want detailed guidance and examples
+- **Fast Mode** ("let's use the PDCA framework fast mode"): Routine tasks, experienced PDCA users, when you want maximum efficiency
